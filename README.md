@@ -1,10 +1,7 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-<figure>
-<img src="figures/ecorisk_logo.png" alt="ecorisk logo" />
-<figcaption aria-hidden="true">ecorisk logo</figcaption>
-</figure>
+![ecorisk logo](figures/ecorisk_logo.png)  
 
 # ecorisk
 
