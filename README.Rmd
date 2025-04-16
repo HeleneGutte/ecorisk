@@ -19,6 +19,5 @@ options(tibble.print_min = 5, tibble.print_max = 5)
 # ecorisk - an R package for ecological/ecosystem-based risk assessments
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/HeleneGutte/ecorisk_draft/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/HeleneGutte/ecorisk_draft/actions/workflows/R-CMD-check.yaml)
 [![R-CMD-check](https://github.com/HeleneGutte/ecorisk/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/HeleneGutte/ecorisk/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
