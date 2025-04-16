@@ -1,0 +1,59 @@
+Package: ecorisk
+Title: Risk Assessments for Ecosystems or Ecosystem Components
+Version: 0.0.0.9000
+Authors@R: c(
+    person(given = "Helene",
+           family = "Gutte",
+           role = c("aut", "cre"),
+           email = "helenegutte96@gmail.com",
+           comment = c(ORCID = "YOUR-ORCID-ID")),
+    person("Saskia A.", "Otto", role = "aut", 
+           comment = c(ORCID = "0000-0001-7780-1322") )
+    )
+Description: Implementation of a modular framework for ecosystem risk assessments, 
+    combining existing risk assessment approaches. 
+License: CC BY 4.0
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
+URL: https://github.com/HeleneGutte/ecorisk
+BugReports: https://github.com/HeleneGutte/ecorisk/issues
+Imports: 
+    colorspace,
+    forecast, 
+    ggnewscale, 
+    ggplot2,
+    gridExtra, 
+    mgcv,
+    rlang, 
+    stats, 
+    tibble
+Depends: 
+    R (>= 3.5)
+Suggests: 
+    dplyr,
+    geomtextpath,
+    ggpubr,
+    kableExtra,
+    knitr,
+    rmarkdown,
+    stringr,
+    testthat (>= 3.0.0),
+    tidyr
+VignetteBuilder: knitr
+Config/testthat/edition: 3
+Collate: 
+    'aggregate_risk.R'
+    'calc_exposure.R'
+    'calc_sensitivity.R'
+    'create_template_exposure.R'
+    'create_template_sensitivity.R'
+    'data.R'
+    'model_exposure.R'
+    'model_sensitivity.R'
+    'plot_heatmap.R'
+    'plot_radar.R'
+    'risk.R'
+    'status.R'
+    'vulnerability.R'

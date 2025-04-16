@@ -1,0 +1,9 @@
+^ecorisk\.Rproj$
+^\.Rproj\.user$
+^data-raw$
+^README\.Rmd$
+^README-.*\.png$
+^CODE_OF_CONDUCT\.md$
+^LICENSE\.md$
+^figures$
+^\.github$
