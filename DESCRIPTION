@@ -4,9 +4,9 @@ Version: 0.0.0.9000
 Authors@R: c(
     person(given = "Helene",
            family = "Gutte",
-           role = c("aut", "cre"),
+           role = c("aut", "cre", "cph"),
            email = "helenegutte96@gmail.com",
-           comment = c(ORCID = "YOUR-ORCID-ID")),
+           comment = c(ORCID = "0009-0006-0681-0444")),
     person("Saskia A.", "Otto", role = "aut", 
            comment = c(ORCID = "0000-0001-7780-1322") )
     )
