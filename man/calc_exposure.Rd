@@ -8,7 +8,7 @@ calc_exposure(
   pressures,
   components,
   probabilities = NULL,
-  uncertainties = NULL,
+  uncertainty = NULL,
   method = "mean"
 )
 }
@@ -24,8 +24,8 @@ as the pressure vector or come from the same data frame.}
 each pressure (values have to be between 0 and 1); default is \code{NULL}.
 Has to be in the same order as the pressure vector.}
 
-\item{uncertainties}{a numeric vector or  data frame containing the associated
-uncertainties per component; default is \code{NULL}.
+\item{uncertainty}{a numeric vector or  data frame containing the associated
+uncertainty per component; default is \code{NULL}.
 Has to be in the same order as the pressure vector.}
 
 \item{method}{a character string specifying the aggregation method. Available are
@@ -62,7 +62,7 @@ ex_expert_exposure
 calc_exposure(
   pressures = ex_expert_exposure$pressure,
   components = ex_expert_exposure[ ,2:5],
-  uncertainties = ex_expert_exposure[ ,6:9]
+  uncertainty = ex_expert_exposure[ ,6:9]
  )
 
 
@@ -90,7 +90,7 @@ calc_exposure(
   pressures = exp_tbl$pressure,
   components = exp_tbl[ ,c("magnitude", "spatial")],
   probabilities = exp_tbl$probability,
-  uncertainties = exp_tbl$uncertainty
+  uncertainty = exp_tbl$uncertainty
  )
 }
 \seealso{

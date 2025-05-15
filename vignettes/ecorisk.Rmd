@@ -625,7 +625,7 @@ minimum or maximum.
 exp_expert <- calc_exposure(
   pressures = exposure_scoring$pressure, 
   components = exposure_scoring[ ,2:5],
-  uncertainties = exposure_scoring[ ,6:9],
+  uncertainty = exposure_scoring[ ,6:9],
   method = "mean"
 )
 head(exp_expert)

@@ -11,8 +11,8 @@
 #' @param probabilities Optionally: a numeric vector containing the probabilities of
 #'        each pressure (values have to be between 0 and 1); default is \code{NULL}.
 #'        Has to be in the same order as the pressure vector.
-#' @param uncertainties a numeric vector or  data frame containing the associated
-#'        uncertainties per component; default is \code{NULL}.
+#' @param uncertainty a numeric vector or  data frame containing the associated
+#'        uncertainty per component; default is \code{NULL}.
 #'        Has to be in the same order as the pressure vector.
 #' @param method a character string specifying the aggregation method. Available are
 #'        mean (default), median, maximum, and minimum.
@@ -40,6 +40,7 @@
 #'
 #' @export
 #'
+#'
 #' @examples
 #' ### Example using demo data with five pressures, four components and their individual
 #' # uncertainties (probabilities are assumed to be 1):
@@ -48,7 +49,7 @@
 #' calc_exposure(
 #'   pressures = ex_expert_exposure$pressure,
 #'   components = ex_expert_exposure[ ,2:5],
-#'   uncertainties = ex_expert_exposure[ ,6:9]
+#'   uncertainty = ex_expert_exposure[ ,6:9]
 #'  )
 #'
 #'
@@ -76,11 +77,11 @@
 #'   pressures = exp_tbl$pressure,
 #'   components = exp_tbl[ ,c("magnitude", "spatial")],
 #'   probabilities = exp_tbl$probability,
-#'   uncertainties = exp_tbl$uncertainty
+#'   uncertainty = exp_tbl$uncertainty
 #'  )
 
 calc_exposure <- function(pressures, components, probabilities = NULL,
-  uncertainties = NULL, method = "mean") {
+  uncertainty = NULL, method = "mean") {
 
   if (!is.character(pressures)) {
     stop("The 'pressures' argument must be a character vector of pressure names.")
@@ -96,8 +97,8 @@ calc_exposure <- function(pressures, components, probabilities = NULL,
       stop("The 'probabilities' argument must be NULL or a numeric vector with values between 0 and 1.")
     }
   }
-  if (!is.null(uncertainties) & all(sapply(uncertainties, is.numeric)) == FALSE) {
-    stop("The 'uncertainties' argument must be NULL or a numeric vector or data frame with numeric variables.")
+  if (!is.null(uncertainty) & all(sapply(uncertainty, is.numeric)) == FALSE) {
+    stop("The 'uncertainty' argument must be NULL or a numeric vector or data frame with numeric variables.")
   }
   if (!(method %in% c("mean", "median", "maximum", "minimum"))) {
     warning("method not recognised. Will use method = arithmetic mean instead.")
@@ -164,33 +165,33 @@ calc_exposure <- function(pressures, components, probabilities = NULL,
     }
   }
 
-  # Uncertainties
-  if (is.null(ncol(uncertainties)) == TRUE) {
-    if (is.null(uncertainties) == TRUE) {
+  # uncertainty
+  if (is.null(ncol(uncertainty)) == TRUE) {
+    if (is.null(uncertainty) == TRUE) {
       unc <- rep(NA, length(pressures))
     } else {
-      unc <- uncertainties
+      unc <- uncertainty
     }
 
   } else {
     if (method == "median") {
       for (i in 1:length(pressures)) {
-        unc[i] <- stats::median(as.numeric(uncertainties[i, ]), na.rm = T)
+        unc[i] <- stats::median(as.numeric(uncertainty[i, ]), na.rm = T)
       }
     }
     if (method == "maximum") {
       for (i in 1:length(pressures)) {
-        unc[i] <- max(as.numeric(uncertainties[i, ]), na.rm = T)
+        unc[i] <- max(as.numeric(uncertainty[i, ]), na.rm = T)
       }
     }
     if (method == "minimum") {
       for (i in 1:length(pressures)) {
-        unc[i] <- min(as.numeric(uncertainties[i, ]), na.rm = T)
+        unc[i] <- min(as.numeric(uncertainty[i, ]), na.rm = T)
       }
     }
     if (!(method %in% c("median", "maximum", "minimum"))) {
       for (i in 1:length(pressures)) {
-        unc[i] <- mean(as.numeric(uncertainties[i, ]), na.rm = T)
+        unc[i] <- mean(as.numeric(uncertainty[i, ]), na.rm = T)
       }
     }
   }

@@ -3,7 +3,7 @@ test_that("output data frame", {
   dat <- calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7:9]
+    uncertainty = a[ ,7:9]
   )
 
   expect_s3_class(dat, "data.frame")
@@ -30,25 +30,25 @@ test_that("results are correct for every method", {
   dat <- calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7:9],
+    uncertainty = a[ ,7:9],
     method = "median"
   )
   dat2 <- calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7:9],
+    uncertainty = a[ ,7:9],
     method = "mean"
   )
   dat3 <- calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7:9],
+    uncertainty = a[ ,7:9],
     method = "minimum"
   )
   dat4 <- calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7:9],
+    uncertainty = a[ ,7:9],
     method = "maximum"
   )
 
@@ -63,28 +63,28 @@ test_that("results are correct for every method", {
   dat <- calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7:9],
+    uncertainty = a[ ,7:9],
     method = "median",
     probabilities = a$probabilities
   )
   dat2 <- calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7:9],
+    uncertainty = a[ ,7:9],
     method = "mean",
     probabilities = a$probabilities
   )
   dat3 <- calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7:9],
+    uncertainty = a[ ,7:9],
     method = "minimum",
     probabilities = a$probabilities
   )
   dat4 <- calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7:9],
+    uncertainty = a[ ,7:9],
     method = "maximum",
     probabilities = a$probabilities
   )
@@ -103,7 +103,7 @@ test_that("results are correct for every method", {
   dat <- calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7],
+    uncertainty = a[ ,7],
     method = "median",
     probabilities = a$probabilities
   )
@@ -118,7 +118,7 @@ test_that("error and warning display", {
   expect_warning(calc_exposure(
     pressures = a$pressure,
     components = a[ ,2:5],
-    uncertainties = a[ ,7:9],
+    uncertainty = a[ ,7:9],
     method = "blub")
   )
 
@@ -137,7 +137,7 @@ test_that("error and warning display", {
     probabilities = c(2,4,0,1,0.5)))
   # uncertainity is not completely numeric
   expect_error(calc_exposure(pressures = a$pressure, components = a[ ,c(2,5)],
-    uncertainties = a[ ,c(1,8,9)]))
+    uncertainty = a[ ,c(1,8,9)]))
 })
 
 
