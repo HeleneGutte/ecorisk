@@ -79,7 +79,7 @@ and an ARIMA model.
 In case the relationship of one state indicator - pressure pair is not
 significant the sensitivity score is 0, and thus also vulnerability and risk
 will be 0. For a significant relationship the score will be set based on the
-R-squared value from 1 (R-squared < 0.2) to 5 (R-squared ≥ 0.8). Additionally,
+R-squared value from 1 (R-squared < 0.2) to 5 (R-squared >= 0.8). Additionally,
 the function evaluates the edf score of the GAM which indicates the degree of
 non-linearity in the relationship. Since highly non-linear relationships are
 harder to predict, the risk of reaching an undesired state increases and the
