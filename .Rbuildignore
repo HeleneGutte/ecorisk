@@ -7,3 +7,4 @@
 ^LICENSE\.md$
 ^figures$
 ^\.github$
+^cran-comments\.md$
