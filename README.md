@@ -27,5 +27,3 @@ remotes::install_github("HeleneGutte/ecorisk")
 
 An example analysis using the provided demo datasets, and information on
 how to apply the ecorisk framework are available in the vignette.
-
-## News
