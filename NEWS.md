@@ -1,3 +1,4 @@
-# ecorisk (development version)
+# ecorisk 0.1.0
 
-* Initial CRAN submission.
+-   Initial CRAN submission.
+
