@@ -11,7 +11,7 @@ Authors@R: c(
            comment = c(ORCID = "0000-0001-7780-1322") )
     )
 Description: Implementation of a modular framework for ecosystem risk assessments, 
-    combining existing risk assessment approaches tailored to semiquantitative and
+    combining existing risk assessment approaches tailored to semi-quantitative and
     quantitative analyses. 
 License: CC BY 4.0
 Encoding: UTF-8
