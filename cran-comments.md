@@ -1,3 +1,12 @@
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Rewritten the DESCRIPTION to avoid the word ecorisk 
+  in the description.
+
+* Simplified the examples in model_exposure() and 
+  plot_heatmap() to decrease run times.
+
 ## R CMD check results
 
 0 errors | 0 warnings | 1 note
