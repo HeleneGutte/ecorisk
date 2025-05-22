@@ -120,8 +120,10 @@
 #' ### Example with 3 pressure time series in the demo data 'pressure_ts_baltic'
 #' #   where the first 11 years represent the general baseline period and the last
 #' #   7 years of the time series the current assessment period:
+#' sub_ts <- pressure_ts_baltic[ ,c("year", "surf_temp_sum", 
+#'   "surf_sal_sum", "bot_oxy_ann")]
 #' model_exposure(
-#'   pressure_time_series = pressure_ts_baltic[ ,c("year", "surf_temp_sum", "surf_sal_sum", "bot_oxy_ann")],
+#'   pressure_time_series = sub_ts ,
 #'   base_years = c(start = 1984, end = 1994),
 #'   current_years = c(start = 2010, end = 2016)
 #' )
