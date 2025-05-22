@@ -137,11 +137,11 @@ reflect ongoing dynamics. Especially for oscillating pressures time periods
 should be longer to assess the overall trend and not the oscillation itself.
 }
 \examples{
-### Example with 8 pressure time series in the demo data 'pressure_ts_baltic'
+### Example with 3 pressure time series in the demo data 'pressure_ts_baltic'
 #   where the first 11 years represent the general baseline period and the last
 #   7 years of the time series the current assessment period:
 model_exposure(
-  pressure_time_series = pressure_ts_baltic,
+  pressure_time_series = pressure_ts_baltic[ ,c("year", "surf_temp_sum", "surf_sal_sum", "bot_oxy_ann")],
   base_years = c(start = 1984, end = 1994),
   current_years = c(start = 2010, end = 2016)
 )

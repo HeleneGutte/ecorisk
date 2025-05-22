@@ -117,11 +117,11 @@
 #' @export
 #'
 #' @examples
-#' ### Example with 8 pressure time series in the demo data 'pressure_ts_baltic'
+#' ### Example with 3 pressure time series in the demo data 'pressure_ts_baltic'
 #' #   where the first 11 years represent the general baseline period and the last
 #' #   7 years of the time series the current assessment period:
 #' model_exposure(
-#'   pressure_time_series = pressure_ts_baltic,
+#'   pressure_time_series = pressure_ts_baltic[ ,c("year", "surf_temp_sum", "surf_sal_sum", "bot_oxy_ann")],
 #'   base_years = c(start = 1984, end = 1994),
 #'   current_years = c(start = 2010, end = 2016)
 #' )
@@ -337,7 +337,7 @@ model_exposure <- function(pressure_time_series,
 
     # Extract 95% confidence interval of both periods to evaluate whether
     # one of the means falls with in the CI of the other period:
-    it <- 10000
+    it <- 1000
     # empty vector:
     sm <- numeric(it)
     # loop:
