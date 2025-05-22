@@ -42,32 +42,30 @@
 #'
 #' @examples
 #' ### Demo with output data from the risk() and aggregate_risk() functions
-#' #   based on expert scores, using a subset, the results with the full demo
-#' #   data set are in the vignette.
-#' 
-#' sub_expert_risk <- ex_output_risk_expert[c(1,2,6,7,11,12,16,17,21,22,26,27,31,32,36,37) ,]
-#' sub_aggr_risk <- aggregate_risk(sub_expert_risk)
+#' #   based on expert scores.
 #'
 #' # Using default settings for the overall risk scores and associated uncertainty
 #' # scores (i.e. in this case, combined across both types)
 #' p_heat <- plot_heatmap(
-#'   risk_scores = sub_expert_risk,
-#'   aggregated_scores = sub_aggr_risk
+#'   risk_scores = ex_output_risk_expert,
+#'   aggregated_scores = ex_output_aggregate_risk_expert
 #' )
 #' # For each type in both input datasets, a heatmap is generated
 #' p_heat[[1]] # display direct effects
 #' p_heat[[2]] # display direct/indirect effects
 #'
 #' # Hide uncertainty results and order indicators and pressures manually
-#' p_heat_mod <- plot_heatmap(
-#'   risk_scores = sub_expert_risk,
-#'   aggregated_scores = sub_aggr_risk,
-#'   order_ind = c("phytoplankton", "herring", "cod", "seabirds"),
-#'   order_press = c("temperature", "salinity", "oxygen", "nutrient",
-#'     "fishing"),
-#'   uncertainty = FALSE
-#' )
-#' p_heat_mod[[1]]
+#' \donttest{
+#'   p_heat_mod <- plot_heatmap(
+#'     risk_scores = ex_output_risk_expert,
+#'     aggregated_scores = ex_output_aggregate_risk_expert,
+#'     order_ind = c("phytoplankton", "herring", "cod", "seabirds"),
+#'     order_press = c("temperature", "salinity", "oxygen", "nutrient",
+#'       "fishing"),
+#'     uncertainty = FALSE
+#'   )
+#'   p_heat_mod[[1]]
+#' }
 #'
 #'
 #' ### Demo with combined expert-based and model-based pathways
