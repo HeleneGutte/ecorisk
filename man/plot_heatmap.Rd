@@ -67,13 +67,17 @@ risk is displayed. Uncertainty can be plotted as frame of the heatmap tiles on a
 }
 \examples{
 ### Demo with output data from the risk() and aggregate_risk() functions
-#   based on expert scores
+#   based on expert scores, using a subset, the results with the full demo
+#   data set are in the vignette.
+
+sub_expert_risk <- ex_output_risk_expert[c(1,2,6,7,11,12,16,17,21,22,26,27,31,32,36,37) ,]
+sub_aggr_risk <- aggregate_risk(sub_expert_risk)
 
 # Using default settings for the overall risk scores and associated uncertainty
 # scores (i.e. in this case, combined across both types)
 p_heat <- plot_heatmap(
-  risk_scores = ex_output_risk_expert,
-  aggregated_scores = ex_output_aggregate_risk_expert
+  risk_scores = sub_expert_risk,
+  aggregated_scores = sub_aggr_risk
 )
 # For each type in both input datasets, a heatmap is generated
 p_heat[[1]] # display direct effects
@@ -81,8 +85,8 @@ p_heat[[2]] # display direct/indirect effects
 
 # Hide uncertainty results and order indicators and pressures manually
 p_heat_mod <- plot_heatmap(
-  risk_scores = ex_output_risk_expert,
-  aggregated_scores = ex_output_aggregate_risk_expert,
+  risk_scores = sub_expert_risk,
+  aggregated_scores = sub_aggr_risk,
   order_ind = c("phytoplankton", "herring", "cod", "seabirds"),
   order_press = c("temperature", "salinity", "oxygen", "nutrient",
     "fishing"),
