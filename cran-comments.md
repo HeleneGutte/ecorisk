@@ -1,6 +1,16 @@
 ## Resubmission
 This is a resubmission. In this version I have:
 
+* Simplified the examples in plot_radar() and plot_heatmap() to decrease run times.
+
+0 errors | 0 warnings | 1 note
+❯ checking for future file timestamps ... NOTE
+  unable to verify current time
+
+
+## Resubmission
+This is a resubmission. In this version I have:
+
 * Changed the License in the DESCRIPTION and in LICENSE.md from CC BY 4.0 
   to MIT to comply with the open source initiative. 
 
