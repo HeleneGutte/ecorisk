@@ -13,7 +13,7 @@ Authors@R: c(
 Description: Implementation of a modular framework for ecosystem risk assessments, 
     combining existing risk assessment approaches tailored to semi-quantitative and
     quantitative analyses. 
-License: CC BY 4.0
+License: MIT
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
