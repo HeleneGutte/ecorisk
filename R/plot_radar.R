@@ -42,12 +42,14 @@
 #' p_radar[[1]] # display radar chart for first indicator
 #'
 #' # Show overall risk score based on direct effects only
+#' \donttest{
 #' p_radar_direct <- plot_radar(
 #'   risk_scores = ex_output_risk_expert,
 #'   aggregated_scores = ex_output_aggregate_risk_expert,
 #'   type = "direct"
 #' )
 #' p_radar_direct[[1]]
+#' }
 #'
 #'
 #' ### Demo with combined expert-based and model-based pathways

@@ -67,20 +67,24 @@ combined_risk <- rbind(ex_output_risk_expert, ex_output_risk_model)
 aggr_risk <- aggregate_risk(risk_results = combined_risk)
 
 # Default settings (combined type and pathway)
+\donttest{
 p_radar_comb <- plot_radar(
   risk_scores = combined_risk,
   aggregated_scores = aggr_risk
 )
 p_radar_comb[[1]]
+}
 
 # Show overall risk score based on direct/indirect effects only for both
 # pathways combined
+\donttest{
 p_radar_comb_dindi <- plot_radar(
   risk_scores = ex_output_risk_expert,
   aggregated_scores = ex_output_aggregate_risk_expert,
   type = "direct_indirect"
 )
 p_radar_comb_dindi[[1]]
+}
 }
 \seealso{
 \code{\link{risk}}, \code{\link{aggregate_risk}} to generate result tables/output
