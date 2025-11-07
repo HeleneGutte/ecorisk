@@ -32,9 +32,10 @@
 #' @examples
 #' ### Demo with output data from the risk() and aggregate_risk() functions
 #' #   based on expert scores
-#'
+#' # The examples can run for a longer time, thus they are in dontrun{}.
 #' # Using default settings for the indicator-specific overall risk score (coloured value)
 #' # and associated uncertainty score (black value) (i.e., combined across both types)
+#' \dontrun{
 #' p_radar <- plot_radar(
 #'   risk_scores = ex_output_risk_expert,
 #'   aggregated_scores = ex_output_aggregate_risk_expert
@@ -42,33 +43,33 @@
 #' p_radar[[1]] # display radar chart for first indicator
 #'
 #' # Show overall risk score based on direct effects only
-#' \donttest{
 #' p_radar_direct <- plot_radar(
 #'   risk_scores = ex_output_risk_expert,
 #'   aggregated_scores = ex_output_aggregate_risk_expert,
 #'   type = "direct"
 #' )
 #' p_radar_direct[[1]]
-#' }
+#'
 #'
 #'
 #' ### Demo with combined expert-based and model-based pathways
-#'
+#' 
 #' combined_risk <- rbind(ex_output_risk_expert, ex_output_risk_model)
 #' aggr_risk <- aggregate_risk(risk_results = combined_risk)
+#' 
 #'
 #' # Default settings (combined type and pathway)
-#' \donttest{
+#' 
 #' p_radar_comb <- plot_radar(
 #'   risk_scores = combined_risk,
 #'   aggregated_scores = aggr_risk
 #' )
 #' p_radar_comb[[1]]
-#' }
+#' 
 #'
 #' # Show overall risk score based on direct/indirect effects only for both
 #' # pathways combined
-#' \donttest{
+#' 
 #' p_radar_comb_dindi <- plot_radar(
 #'   risk_scores = ex_output_risk_expert,
 #'   aggregated_scores = ex_output_aggregate_risk_expert,

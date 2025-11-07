@@ -79,8 +79,9 @@ p_heat <- plot_heatmap(
 p_heat[[1]] # display direct effects
 p_heat[[2]] # display direct/indirect effects
 
+# The following examples can run for a longer time, thus they are in dontrun{}.
 # Hide uncertainty results and order indicators and pressures manually
-\donttest{
+\dontrun{
   p_heat_mod <- plot_heatmap(
     risk_scores = ex_output_risk_expert,
     aggregated_scores = ex_output_aggregate_risk_expert,
@@ -94,7 +95,7 @@ p_heat[[2]] # display direct/indirect effects
 
 
 ### Demo with combined expert-based and model-based pathways
-
+\dontrun{
 combined_risk <- rbind(ex_output_risk_expert, ex_output_risk_model)
 aggr_risk <- aggregate_risk(risk_results = combined_risk)
 
@@ -104,9 +105,10 @@ p_heat_comb <- plot_heatmap(
   aggregated_scores = aggr_risk
 )
 p_heat_comb[[1]]
-
+}
 
 ### Demo with two indicators assessed with both pathways
+\dontrun{
 risk_model <- ex_output_risk_model[c(1, 3, 5, 7, 8, 9, 12, 14:16), ]
 risk_model$pressure <- c(
  "nutrient", "temperature", "salinity", "oxygen", "fishing",   # for zooplankton
@@ -117,7 +119,8 @@ dummy_model <- risk_model |>
    indicator == "zooplankton_mean_size" ~ "phytoplankton",
    .default = "cod"
  ))
-
+}
+\dontrun{
 risk_comb <- rbind(ex_output_risk_expert, dummy_model)
 aggr_risk_comb <- aggregate_risk(risk_results = risk_comb)
 
@@ -135,6 +138,7 @@ p_heat_mean_path <- plot_heatmap(risk_scores = risk_comb,
                        output_2_pathway_indicators = 1,
                        order_ind = c("phytoplankton", "herring", "cod", "seabirds"))
 p_heat_mean_path
+}
 }
 \seealso{
 \code{\link{risk}}, \code{\link{aggregate_risk}} to generate result tables/output
