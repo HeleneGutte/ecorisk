@@ -81,6 +81,27 @@
 plot_radar <- function(risk_scores, aggregated_scores,
   type = "combined", pathway = "combined") {
 
+  ### check if suggested packages are installed: 
+  if(!requireNamespace(c("geomtextpath"), quietly = TRUE)){
+    stop(
+      "Package \"geomtextpath\" must be installed to use this function.",
+      call. = FALSE
+    )
+  }
+  if(!requireNamespace(c("ggnewscale"), quietly = TRUE)){
+    stop(
+      "Package \"ggnewscale\" must be installed to use this function.",
+      call. = FALSE
+    )
+  }
+  if(!requireNamespace(c("ggplot2"), quietly = TRUE)){
+    stop(
+      "Package \"ggplot2\" must be installed to use this function.",
+      call. = FALSE
+    )
+  }
+
+  
   multi_press <- aggregated_scores$multi_pressure_risk
   multi_ind <- aggregated_scores$multi_indicator_risk
   system_risk <- aggregated_scores$ecosystem_risk

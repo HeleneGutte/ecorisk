@@ -121,6 +121,32 @@ plot_heatmap <- function(risk_scores, aggregated_scores,
   order_ind = NULL, order_press = NULL, pathway = "combined",
   uncertainty = TRUE, output_2_pathway_indicators = NULL, title = NULL,
   risk_scale_steps = 1, text_size_axis_text = NULL, text_size_axis_title = NULL) {
+  
+  ### check if suggested packages are installed: 
+  if(!requireNamespace(c("colorspace"), quietly = TRUE)){
+    stop(
+      "Package \"colorspace\" must be installed to use this function.",
+      call. = FALSE
+    )
+  }
+  if(!requireNamespace(c("ggplot2"), quietly = TRUE)){
+    stop(
+      "Package \"ggplot2\" must be installed to use this function.",
+      call. = FALSE
+    )
+  }
+  if(!requireNamespace(c("ggpubr"), quietly = TRUE)){
+    stop(
+      "Package \"ggpubr\" must be installed to use this function.",
+      call. = FALSE
+    )
+  }
+  if(!requireNamespace(c("gridExtra"), quietly = TRUE)){
+    stop(
+      "Package \"gridExtra\" must be installed to use this function.",
+      call. = FALSE
+    )
+  }
 
   ### Data input validation ----
   if (!is.null(order_ind)) {
