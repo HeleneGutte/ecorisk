@@ -238,8 +238,8 @@ plot_radar <- function(risk_scores, aggregated_scores,
                                       paste0("\u00B1 ", plot_range[2]/4*3), paste0("\u00B1 ", plot_range[2]/4*4)),
                             color = "grey40") +
           # Convert it to a pie
-          # ggplot2::coord_polar() +
-          geomtextpath::coord_curvedpolar() +
+           ggplot2::coord_radial() +
+          #geomtextpath::coord_curvedpolar() +
 
           # Modify the theme
           ggplot2::labs(
@@ -336,8 +336,8 @@ plot_radar <- function(risk_scores, aggregated_scores,
             colour = col_multi_press, size = 4) +
 
           # Convert it to a pie
-          # ggplot2::coord_polar() +
-          geomtextpath::coord_curvedpolar() +
+          ggplot2::coord_radial() +
+          # geomtextpath::coord_curvedpolar() +
 
           # Modify the theme
           ggplot2::labs(title = paste0(indicators[i], ", ", status_helper, ", ", pathway_helper),

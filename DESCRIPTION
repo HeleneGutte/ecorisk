@@ -31,7 +31,6 @@ Depends:
 Suggests: 
     colorspace,
     dplyr,
-    geomtextpath,
     ggnewscale, 
     ggplot2,
     ggpubr,
