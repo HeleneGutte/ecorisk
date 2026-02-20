@@ -82,12 +82,6 @@ plot_radar <- function(risk_scores, aggregated_scores,
   type = "combined", pathway = "combined") {
 
   ### check if suggested packages are installed: 
-  if(!requireNamespace(c("geomtextpath"), quietly = TRUE)){
-    stop(
-      "Package \"geomtextpath\" must be installed to use this function.",
-      call. = FALSE
-    )
-  }
   if(!requireNamespace(c("ggnewscale"), quietly = TRUE)){
     stop(
       "Package \"ggnewscale\" must be installed to use this function.",
