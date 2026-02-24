@@ -37,6 +37,8 @@ Suggests:
     gridExtra,
     kableExtra,
     knitr,
+    mgcViz,
+    patchwork,
     rmarkdown,
     stringr,
     testthat (>= 3.0.0),
@@ -54,6 +56,7 @@ Collate:
     'ecorisk-package.R'
     'model_exposure.R'
     'model_sensitivity.R'
+    'plot_diagnostic_sensitivity.R'
     'plot_heatmap.R'
     'plot_radar.R'
     'risk.R'
