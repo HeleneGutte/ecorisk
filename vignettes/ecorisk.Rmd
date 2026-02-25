@@ -694,7 +694,7 @@ pressure combination the assessment time period.
 ```{r model sensitivity}
 sens_ac_model <- model_sensitivity(
   indicator_time_series = ts_indicators, 
-  pressure_time_series = pressure_ts_baltic,
+  pressure_time_series = ts_pressures,
   current_years = c(start = 2010, end = 2016)
 )
 sens_ac_model
@@ -709,6 +709,19 @@ is used to set a score between 1 and 5. For non-significant models the
 score is set to 0. The edf score evaluates non-linearity of the
 relationships, as these are more risky, the sensitivity will be
 increased for edf scores \>1, but maximum to 5. 
+
+The scoring of sensitivity heavly relies on generalized additive models, 
+therefor it is important to inspect model diagnostics of the applied models.
+The function `plot_diagnostic_sensitivity()` creates for each state and 
+pressure inidcator combination four diagnostic plots.
+
+```{r model diagnostics sensitivity}
+plot_diagnostic_sensitivity(
+   indicator_time_series = ts_indicators[, c(1:2)],
+   pressure_time_series = ts_pressures[, c(1:2)]
+)
+```
+
 
 Lets continue by calculating the vulnerability for both pathways with
 the function `vulnerability()`. The vulnerability function combines
