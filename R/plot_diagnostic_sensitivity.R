@@ -9,7 +9,11 @@
 #' @param pressure_time_series a data frame containing only the pressure variables.
 #'        First column MUST be the time column.
 #'
-#' @returns
+#' @returns The function returns a list of ggplot objects combined with patchwork.
+#'  For each state and pressure indicator combination 4 diagnostic plots are created:
+#'  Q-Q plots, residuals vs- linear predictor, a histogram of the residuals and 
+#'  response vs. fitted values. 
+#'  
 #' @export
 #'
 #' @examples
@@ -38,7 +42,7 @@ plot_diagnostic_sensitivity <- function(indicator_time_series, pressure_time_ser
   }
   if(!requireNamespace(c("patchwork"), quietly = TRUE)){
     stop(
-      "Package \"mgcViz\" must be installed to use this function.",
+      "Package \"patchwork\" must be installed to use this function.",
       call. = FALSE
     )
   }
@@ -135,6 +139,8 @@ plot_diagnostic_sensitivity <- function(indicator_time_series, pressure_time_ser
   
   # add message what to do with the plots and how to proceed, when not satisfied 
   # with the model diagnostics
+  
+  message("Please review the model diagnostics of the GAMs applied in the time series based sensitivity scoring. Remove models with unacceptable diagnostics from the output table of the model_sensitivity() function.")
   
   return(diag_plot_list)
   
