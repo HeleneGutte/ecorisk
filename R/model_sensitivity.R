@@ -4,7 +4,8 @@
 #' a pressure variable to assess the state indicators sensitivity towards the
 #' pressure. The relationship between pressure and state indicator is determined
 #' using a generalized additive model (GAM). Uncertainty is evaluated with a GAM
-#' and an ARIMA model.
+#' and an ARIMA model. Use \code{\link{plot_diagnostic_sensitivity}} to review 
+#' model diagnostics of the applied GAM.
 #'
 #' @param indicator_time_series a data frame containing only the state indicator
 #'        time series. First column MUST be the time column.
@@ -498,6 +499,8 @@ model_sensitivity <- function(indicator_time_series, pressure_time_series,
     uncertainty_arima = gam$unc_arima
   )
 
+  message("Please review the model diagnostics of the GAMs applied in the time series based sensitivity scoring using the function plot_diagnostic_sensitivity(). Remove models with unacceptable diagnostics from the output table of this function.")
+  
   return(output_model_sens)
 
 }

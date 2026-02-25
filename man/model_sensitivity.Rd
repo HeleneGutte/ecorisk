@@ -73,7 +73,8 @@ The function \code{model_sensitivity()} uses time series of a state indicator an
 a pressure variable to assess the state indicators sensitivity towards the
 pressure. The relationship between pressure and state indicator is determined
 using a generalized additive model (GAM). Uncertainty is evaluated with a GAM
-and an ARIMA model.
+and an ARIMA model. Use \code{\link{plot_diagnostic_sensitivity}} to review
+model diagnostics of the applied GAM.
 }
 \details{
 In case the relationship of one state indicator - pressure pair is not
