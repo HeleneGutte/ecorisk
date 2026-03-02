@@ -27,7 +27,7 @@ Imports:
     stats, 
     tibble
 Depends: 
-    R (>= 4.1.0)
+    R (>= 4.5.1)
 Suggests: 
     colorspace,
     dplyr,
