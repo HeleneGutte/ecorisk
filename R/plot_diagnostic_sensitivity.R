@@ -26,15 +26,6 @@
 
 plot_diagnostic_sensitivity <- function(indicator_time_series, pressure_time_series){
   
-  # split functions into two parts and return a list with two sublist, 
-  # first with diagnostic plots of the GAMs
-  # second with diagnostic plots of the LMs
-  
-  
-  # Or only for GAMs because sensitivity score depends only on GAM and LM gives only the direction
-  # Use second approach
-  # use the function check.gamViz from the mgcViz package
-  
   ### check if suggested packages are installed: 
   if(!requireNamespace(c("mgcViz"), quietly = TRUE)){
     stop(
