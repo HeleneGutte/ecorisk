@@ -17,10 +17,12 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
 #' plot_diagnostic_sensitivity(
 #'   indicator_time_series = indicator_ts_baltic[, c(1,2)],
 #'   pressure_time_series = pressure_ts_baltic[, c(1,2)]
 #'  )
+#'  }
 
 plot_diagnostic_sensitivity <- function(indicator_time_series, pressure_time_series){
   
