@@ -1,4 +1,12 @@
 ## Resubmission
+This is a resubmission. In this version I have: 
+* Simplified the example in `plot_diagnostic_sensitivity()` to decrease run time.
+
+0 errors ✔ | 0 warnings ✔ | 1 note ✖
+❯ checking for future file timestamps ... NOTE
+  unable to verify current time
+
+## Resubmission
 This is a resubmission. In this version I have:
 * Added the function plot_diagnostic_sensitivity() to enable users to check 
   diagnostic plots of the generalized additive models, which are used in 
