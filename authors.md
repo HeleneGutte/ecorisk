@@ -10,7 +10,7 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/HeleneGutte/ecorisk/blob/main/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/HeleneGutte/ecorisk/blob/v0.3.1/DESCRIPTION)
 
 Gutte H, Otto S (2026). *ecorisk: Risk Assessments for Ecosystems or
 Ecosystem Components*. R package version 0.3.1,
