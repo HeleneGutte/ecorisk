@@ -5,12 +5,12 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Ecorisk • ecorisk</title>
+<title>ecorisk • ecorisk</title>
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
 <script src="../deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="../deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="../deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
-<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Ecorisk">
+<script src="../deps/headroom-0.11.0/headroom.min.js"></script><script src="../deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="../deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="../deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="../deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="../deps/search-1.0.0/fuse.min.js"></script><script src="../deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="ecorisk">
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">ecorisk</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,11 +29,18 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="active nav-item"><a class="nav-link" href="../articles/ecorisk.html">Get started</a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
+<li><a class="dropdown-item" href="../articles/ecorisk-background.html">Background &amp; Framework</a></li>
+    <li><a class="dropdown-item" href="../articles/ecorisk-tutorial.html">Get started</a></li>
+  </ul>
+</li>
 <li class="nav-item"><a class="nav-link" href="../reference/index.html">Reference</a></li>
 <li class="nav-item"><a class="nav-link" href="../news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
+<li class="nav-item"><a class="external-link nav-link" href="https://www.sciencedirect.com/science/article/pii/S2352711026001056"><span class="fa fa-file-lines"></span> Publication</a></li>
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="../search.json">
 </form></li>
@@ -51,10 +58,10 @@
 <div class="row">
   <main id="main" class="col-md-9"><div class="page-header">
 
-      <h1>Ecorisk</h1>
+      <h1>ecorisk</h1>
             
       
-      <small class="dont-index">Source: <a href="https://github.com/HeleneGutte/ecorisk/blob/v0.3.1/vignettes/ecorisk.Rmd" class="external-link"><code>vignettes/ecorisk.Rmd</code></a></small>
+      <small class="dont-index">Source: <a href="https://github.com/HeleneGutte/ecorisk/blob/main/vignettes/ecorisk.Rmd" class="external-link"><code>vignettes/ecorisk.Rmd</code></a></small>
       <div class="d-none name"><code>ecorisk.Rmd</code></div>
     </div>
 
@@ -73,7 +80,7 @@ pre {
   background-color: inherit;
 }
 </style>
-<p><img src="images/ecorisk_logo.png" width="300"></p>
+<p><img src="images/ecorisk_logo.png" alt="ecorisk logo" align="right" width="100" height="112"></p>
 <div class="section level3">
 <h3 id="outline">Outline<a class="anchor" aria-label="anchor" href="#outline"></a>
 </h3>
@@ -300,23 +307,23 @@ functions go to <a href="#functions">chapter 4</a>.</p>
 <div class="section level3">
 <h3 id="summary">Brief summary of package and workflow<a class="anchor" aria-label="anchor" href="#summary"></a>
 </h3>
-<p>The ecorisk package supports the ecorisk framework (Gutte et al., in
-prep) by providing tools for analysis, assessment and communication. The
-workflow starts with two pathways, which are later on combined to one.
-One pathway provides functions for expert scoring approaches, the other
-for risk assessments based on time series data. Both pathways analyse
-the two vulnerability components exposure and sensitivity for each
-indicator ~ pressure combination. The adaptive capacity can be analysed
-within the expert scoring pathway. Both pathways optionally assess the
-associated uncertainty of of each component. After assessment of
-exposure and sensitivity the package continues within one joint pathway
-by combining the vulnerability components, assessing the status of each
-indicator, followed by the calculation of the risk from vulnerability
-and status. Now the risk scores from each indicator ~ pressure
-combination can be aggregated to higher complexity levels up to the
-(eco-)system risk score, which can be plotted thereafter. The next
-chapters describe in detail how such a risk assessment can be conducted
-(<a href="#risk-intro">chapter 2</a>) and the usage of the individual
+<p>The ecorisk package supports the ecorisk framework <span class="citation">(<a href="#ref-gutte2026">Gutte, Möllmann, and Otto
+2026</a>)</span> by providing<br>
+tools for analysis, assessment and communication. The workflow starts
+with two pathways, which are later on combined to one. One pathway
+provides functions for expert scoring approaches, the other for risk
+assessments based on time series data. Both pathways analyse the two
+vulnerability components exposure and sensitivity for each indicator ~
+pressure combination. The adaptive capacity can be analysed within the
+expert scoring pathway. Both pathways optionally assess the associated
+uncertainty of of each component. After assessment of exposure and
+sensitivity the package continues within one joint pathway by combining
+the vulnerability components, assessing the status of each indicator,
+followed by the calculation of the risk from vulnerability and status.
+Now the risk scores from each indicator ~ pressure combination can be
+aggregated to higher complexity levels up to the (eco-)system risk
+score, which can be plotted thereafter. The next chapters describe in
+detail how such a risk assessment can be conducted (<a href="#risk-intro">chapter 2</a>) and the usage of the individual
 functions (<a href="#ecorisk">chapter 3</a>).</p>
 </div>
 </div>
@@ -398,19 +405,22 @@ cumulative impacts on the indicators and ecosystem risk scores.</p>
 </div>
 </div>
 <div class="section level2">
-<h2 id="ecorisk">The ecorisk package theory<a class="anchor" aria-label="anchor" href="#ecorisk"></a>
+<h2 id="ecorisk-theory">The ecorisk package theory<a class="anchor" aria-label="anchor" href="#ecorisk-theory"></a>
 </h2>
-<p>The ecorisk package supports the ecorisk framework (Gutte et al., in
-prep.). It provides functions for the semiquantitative expert scoring
-and a time series based quantitative approach. Ecorisk supports the
-integration of different knowledge types, iterative risk assessment
+<p>The ecorisk package supports the ecorisk framework <span class="citation">(<a href="#ref-gutte2026">Gutte, Möllmann, and Otto
+2026</a>)</span>. It provides functions for the semiquantitative expert
+scoring and a time series based quantitative approach. Ecorisk supports
+the integration of different knowledge types, iterative risk assessment
 processes and the analysis of integrated indicators. The ecorisk
 workflow is split at the beginning into two pathways (Figure 1),
 depending on the data input. In each pathway individual indicator
 pressure combinations are analysed for their risk. The pathways are
 combined again for the assessment of vulnerability and risk.</p>
-<p><img src="images/Figure1_workflow.png" alt="Figure 1: Workflow of the ecorisk package.">{width=“600”, height
-= “800”}</p>
+<div class="figure">
+<img src="images/Figure1_workflow.png" class="r-plt" alt="Figure 1: Workflow of the ecorisk package." width="80%"><p class="caption">
+Figure 1: Workflow of the ecorisk package.
+</p>
+</div>
 <div class="section level3">
 <h3 id="ra-analyis">Risk assessment analysis<a class="anchor" aria-label="anchor" href="#ra-analyis"></a>
 </h3>
@@ -419,9 +429,9 @@ conducted an expert scoring exercise or prepared time series to analyse.
 Example data sets can be found in the ecorisk package. Templates for
 exposure and a sensitivity and adaptive capacity scoring can be created
 using the functions <code><a href="../reference/create_template_exposure.html">create_template_exposure()</a></code> and
-<code>crt_sensitivity()</code>. The output can be saved as csv or excel
-file. After they have been filled out by the experts, they can directly
-be anayzed further with the ecorisk workflow.</p>
+<code><a href="../reference/create_template_sensitivity.html">create_template_sensitivity()</a></code>. The output can be saved as
+csv or excel file. After they have been filled out by the experts, they
+can directly be analyzed further with the ecorisk workflow.</p>
 <div class="section level4">
 <h4 id="analysis_score">Expert based semiquantitative pathway<a class="anchor" aria-label="anchor" href="#analysis_score"></a>
 </h4>
@@ -631,10 +641,10 @@ pressures will be assessed using both pathways.</p>
 <p>First step is to create the scoring tables, which will be filled out
 by our experts. With the functions
 <code><a href="../reference/create_template_exposure.html">create_template_exposure()</a></code> and
-<code>crt_sensitivity()</code>, we can automatically create tables for
-further usage in the ecorisk workflow. The functions need the names of
-the pressures and for sensitivity also the names of the indicators. For
-exposure we want to investigate 4 components:</p>
+<code><a href="../reference/create_template_sensitivity.html">create_template_sensitivity()</a></code>, we can automatically create
+tables for further usage in the ecorisk workflow. The functions need the
+names of the pressures and for sensitivity also the names of the
+indicators. For exposure we want to investigate 4 components:</p>
 <ul>
 <li><p>the magnitude of change,</p></li>
 <li><p>the future trend,</p></li>
@@ -1582,6 +1592,11 @@ Jennings, Yves Letourneur, M. Aaron MacNeil, Tim R. McClanahan, Marcus
 C. Öhman, Nicholas V. C. Polunin, and Shaun K. Wilson. 2011.
 <span>“<span class="nocase">Extinction vulnerability of coral reef
 fishes</span>.”</span> <em>Ecology Letters</em> 14 (4): 341–48. <a href="https://doi.org/10.1111/j.1461-0248.2011.01592.x" class="external-link">https://doi.org/10.1111/j.1461-0248.2011.01592.x</a>.
+</div>
+<div id="ref-gutte2026" class="csl-entry">
+Gutte, Helene M., Christian Möllmann, and Saskia A. Otto. 2026.
+<span>“Ecorisk: A Modular r Tool for Ecological Risk Assessment
+Analysis.”</span> <em>SoftwareX</em> 34: 102612. <a href="https://doi.org/10.1016/j.softx.2026.102612" class="external-link">https://doi.org/10.1016/j.softx.2026.102612</a>.
 </div>
 <div id="ref-Hakanson1980" class="csl-entry">
 Håkanson, Lars. 1980. <span>“<span class="nocase">An ecological risk

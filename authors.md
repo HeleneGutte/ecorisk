@@ -10,16 +10,16 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/HeleneGutte/ecorisk/blob/v0.3.1/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/HeleneGutte/ecorisk/blob/main/DESCRIPTION)
 
 Gutte H, Otto S (2026). *ecorisk: Risk Assessments for Ecosystems or
-Ecosystem Components*. R package version 0.3.1,
+Ecosystem Components*. R package version 0.3.1.9000,
 <https://github.com/HeleneGutte/ecorisk>.
 
     @Manual{,
       title = {ecorisk: Risk Assessments for Ecosystems or Ecosystem Components},
       author = {Helene Gutte and Saskia A. Otto},
       year = {2026},
-      note = {R package version 0.3.1},
+      note = {R package version 0.3.1.9000},
       url = {https://github.com/HeleneGutte/ecorisk},
     }

@@ -1,6 +1,6 @@
-# Ecorisk
+# ecorisk
 
-![](images/ecorisk_logo.png)
+![ecorisk logo](images/ecorisk_logo.png)
 
 ### Outline
 
@@ -162,24 +162,25 @@ go to [chapter 4](#functions).
 
 ### Brief summary of package and workflow
 
-The ecorisk package supports the ecorisk framework (Gutte et al., in
-prep) by providing tools for analysis, assessment and communication. The
-workflow starts with two pathways, which are later on combined to one.
-One pathway provides functions for expert scoring approaches, the other
-for risk assessments based on time series data. Both pathways analyse
-the two vulnerability components exposure and sensitivity for each
-indicator ~ pressure combination. The adaptive capacity can be analysed
-within the expert scoring pathway. Both pathways optionally assess the
-associated uncertainty of of each component. After assessment of
-exposure and sensitivity the package continues within one joint pathway
-by combining the vulnerability components, assessing the status of each
-indicator, followed by the calculation of the risk from vulnerability
-and status. Now the risk scores from each indicator ~ pressure
-combination can be aggregated to higher complexity levels up to the
-(eco-)system risk score, which can be plotted thereafter. The next
-chapters describe in detail how such a risk assessment can be conducted
-([chapter 2](#risk-intro)) and the usage of the individual functions
-([chapter 3](#ecorisk)).
+The ecorisk package supports the ecorisk framework ([Gutte, Möllmann,
+and Otto 2026](#ref-gutte2026)) by providing  
+tools for analysis, assessment and communication. The workflow starts
+with two pathways, which are later on combined to one. One pathway
+provides functions for expert scoring approaches, the other for risk
+assessments based on time series data. Both pathways analyse the two
+vulnerability components exposure and sensitivity for each indicator ~
+pressure combination. The adaptive capacity can be analysed within the
+expert scoring pathway. Both pathways optionally assess the associated
+uncertainty of of each component. After assessment of exposure and
+sensitivity the package continues within one joint pathway by combining
+the vulnerability components, assessing the status of each indicator,
+followed by the calculation of the risk from vulnerability and status.
+Now the risk scores from each indicator ~ pressure combination can be
+aggregated to higher complexity levels up to the (eco-)system risk
+score, which can be plotted thereafter. The next chapters describe in
+detail how such a risk assessment can be conducted ([chapter
+2](#risk-intro)) and the usage of the individual functions ([chapter
+3](#ecorisk)).
 
 ## How to do a risk assessment
 
@@ -260,18 +261,21 @@ cumulative impacts on the indicators and ecosystem risk scores.
 
 ## The ecorisk package theory
 
-The ecorisk package supports the ecorisk framework (Gutte et al., in
-prep.). It provides functions for the semiquantitative expert scoring
-and a time series based quantitative approach. Ecorisk supports the
-integration of different knowledge types, iterative risk assessment
-processes and the analysis of integrated indicators. The ecorisk
-workflow is split at the beginning into two pathways (Figure 1),
-depending on the data input. In each pathway individual indicator
-pressure combinations are analysed for their risk. The pathways are
-combined again for the assessment of vulnerability and risk.
+The ecorisk package supports the ecorisk framework ([Gutte, Möllmann,
+and Otto 2026](#ref-gutte2026)). It provides functions for the
+semiquantitative expert scoring and a time series based quantitative
+approach. Ecorisk supports the integration of different knowledge types,
+iterative risk assessment processes and the analysis of integrated
+indicators. The ecorisk workflow is split at the beginning into two
+pathways (Figure 1), depending on the data input. In each pathway
+individual indicator pressure combinations are analysed for their risk.
+The pathways are combined again for the assessment of vulnerability and
+risk.
 
 ![Figure 1: Workflow of the ecorisk
-package.](images/Figure1_workflow.png){width=“600”, height = “800”}
+package.](images/Figure1_workflow.png)
+
+Figure 1: Workflow of the ecorisk package.
 
 ### Risk assessment analysis
 
@@ -281,9 +285,11 @@ Example data sets can be found in the ecorisk package. Templates for
 exposure and a sensitivity and adaptive capacity scoring can be created
 using the functions
 [`create_template_exposure()`](https://helenegutte.github.io/ecorisk/reference/create_template_exposure.md)
-and `crt_sensitivity()`. The output can be saved as csv or excel file.
-After they have been filled out by the experts, they can directly be
-anayzed further with the ecorisk workflow.
+and
+[`create_template_sensitivity()`](https://helenegutte.github.io/ecorisk/reference/create_template_sensitivity.md).
+The output can be saved as csv or excel file. After they have been
+filled out by the experts, they can directly be analyzed further with
+the ecorisk workflow.
 
 #### Expert based semiquantitative pathway
 
@@ -447,10 +453,12 @@ pressures will be assessed using both pathways.
 First step is to create the scoring tables, which will be filled out by
 our experts. With the functions
 [`create_template_exposure()`](https://helenegutte.github.io/ecorisk/reference/create_template_exposure.md)
-and `crt_sensitivity()`, we can automatically create tables for further
-usage in the ecorisk workflow. The functions need the names of the
-pressures and for sensitivity also the names of the indicators. For
-exposure we want to investigate 4 components:
+and
+[`create_template_sensitivity()`](https://helenegutte.github.io/ecorisk/reference/create_template_sensitivity.md),
+we can automatically create tables for further usage in the ecorisk
+workflow. The functions need the names of the pressures and for
+sensitivity also the names of the indicators. For exposure we want to
+investigate 4 components:
 
 - the magnitude of change,
 
@@ -1483,6 +1491,10 @@ Jennings, Yves Letourneur, M. Aaron MacNeil, Tim R. McClanahan, Marcus
 C. Öhman, Nicholas V. C. Polunin, and Shaun K. Wilson. 2011. “Extinction
 vulnerability of coral reef fishes.” *Ecology Letters* 14 (4): 341–48.
 <https://doi.org/10.1111/j.1461-0248.2011.01592.x>.
+
+Gutte, Helene M., Christian Möllmann, and Saskia A. Otto. 2026.
+“Ecorisk: A Modular r Tool for Ecological Risk Assessment Analysis.”
+*SoftwareX* 34: 102612. <https://doi.org/10.1016/j.softx.2026.102612>.
 
 Håkanson, Lars. 1980. “An ecological risk index for aquatic pollution
 control:a sedimentological approach.” *Water Research* 14 (8): 975–1001.

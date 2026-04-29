@@ -1,10 +1,15 @@
 # Changelog
 
+## ecorisk 0.3.1.9000
+
+- Updated citation of the ecorisk framework to Gutte et al. (2026).
+- Fixed typos in vignette.
+
 ## ecorisk 0.3.1
 
 CRAN release: 2026-03-02
 
-- Decrease tun times of examples in plotting functions.
+- Decrease run times of examples in plotting functions.
 
 ## ecorisk 0.3.0
 

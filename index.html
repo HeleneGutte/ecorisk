@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">ecorisk</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.3.1.9000</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -31,11 +31,18 @@
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item"><a class="nav-link" href="articles/ecorisk.html">Get started</a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-articles" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true">Articles</button>
+  <ul class="dropdown-menu" aria-labelledby="dropdown-articles">
+<li><a class="dropdown-item" href="articles/ecorisk-background.html">Background &amp; Framework</a></li>
+    <li><a class="dropdown-item" href="articles/ecorisk-tutorial.html">Get started</a></li>
+  </ul>
+</li>
 <li class="nav-item"><a class="nav-link" href="reference/index.html">Reference</a></li>
 <li class="nav-item"><a class="nav-link" href="news/index.html">Changelog</a></li>
       </ul>
 <ul class="navbar-nav">
+<li class="nav-item"><a class="external-link nav-link" href="https://www.sciencedirect.com/science/article/pii/S2352711026001056"><span class="fa fa-file-lines"></span> Publication</a></li>
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
@@ -48,27 +55,70 @@
 </nav><div class="container template-home">
 <div class="row">
   <main id="main" class="col-md-9"><div class="section level1">
-<div class="page-header"><h1 id="ecorisk-">ecorisk <img src="figures/ecorisk_logo.png" align="right" width="100" height="112"><a class="anchor" aria-label="anchor" href="#ecorisk-"></a>
+<div class="page-header"><h1 id="ecorisk-">ecorisk <img src="reference/figures/ecorisk_logo.png" alt="ecorisk logo" align="right" width="100" height="112"><a class="anchor" aria-label="anchor" href="#ecorisk-"></a>
 </h1></div>
 <!-- badges: start -->
 
 <div class="section level2">
 <h2 id="overview">Overview<a class="anchor" aria-label="anchor" href="#overview"></a>
 </h2>
-<p>ecorisk is an R package operationalizing a modular risk assessment framework for ecosystem-based management based on semiquantitative expert scorings or quantitative time-series analysis.</p>
+<p><em>ecorisk</em> is an R package operationalizing a modular risk assessment framework for ecosystem-based management. It supports semiquantitative expert scoring approaches as well as quantitative time-series analysis — and allows both to be combined in one integrated assessment.</p>
+<p>Key features:</p>
+<ul>
+<li>Risk assessments from single indicator–pressure combinations up to full ecosystem scale</li>
+<li>Integration of expert knowledge and time-series modelling in one framework</li>
+<li>Explicit uncertainty assessment throughout all steps</li>
+<li>Applicable to marine and terrestrial ecosystems</li>
+<li>Publication-ready visualizations via <code><a href="reference/plot_radar.html">plot_radar()</a></code> and <code><a href="reference/plot_heatmap.html">plot_heatmap()</a></code>
+</li>
+</ul>
+<p>The <em>ecorisk</em> workflow consists of two parallel pathways (expert scoring and modelling) that are joined for vulnerability and risk calculation, and can then be aggregated to multi-pressure, multi-indicator, and ecosystem risk scores:</p>
+<p><img src="reference/figures/Figure1_workflow.png" alt="Workflow of the ecorisk package" width="80%"></p>
 </div>
 <div class="section level2">
 <h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
 </h2>
-<p>Install the latest version from GitHub using the <code>remotes</code> package:</p>
+<p>Install the released version from CRAN:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># install.packages("remotes")</span></span>
-<span><span class="fu">remotes</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"HeleneGutte/ecorisk"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"ecorisk"</span><span class="op">)</span></span></code></pre></div>
+<p>Or install the development version from GitHub using the <code>pak</code> package:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"HeleneGutte/ecorisk"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
-<p>An example analysis using the provided demo datasets, and information on how to apply the ecorisk framework are available in the vignette.</p>
+<p>A full tutorial using the provided demo datasets is available in the package vignette:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/vignette.html" class="external-link">vignette</a></span><span class="op">(</span><span class="st">"ecorisk"</span><span class="op">)</span></span></code></pre></div>
+<p>Further background on the risk assessment framework and step-by-step function documentation are available on the <a href="https://helenegutte.github.io/ecorisk/">package website</a>.</p>
+</div>
+<div class="section level2">
+<h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
+</h2>
+<p>If you use the <em>ecorisk</em> package, please cite it using:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/citation.html" class="external-link">citation</a></span><span class="op">(</span><span class="st">"ecorisk"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; To cite package 'ecorisk' in publications use:</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;   Gutte H, Otto S (2026). _ecorisk: Risk Assessments for Ecosystems or</span></span>
+<span><span class="co">#&gt;   Ecosystem Components_. R package version 0.3.1,</span></span>
+<span><span class="co">#&gt;   &lt;https://github.com/HeleneGutte/ecorisk&gt;.</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt; A BibTeX entry for LaTeX users is</span></span>
+<span><span class="co">#&gt; </span></span>
+<span><span class="co">#&gt;   @Manual{,</span></span>
+<span><span class="co">#&gt;     title = {ecorisk: Risk Assessments for Ecosystems or Ecosystem Components},</span></span>
+<span><span class="co">#&gt;     author = {Helene Gutte and Saskia A. Otto},</span></span>
+<span><span class="co">#&gt;     year = {2026},</span></span>
+<span><span class="co">#&gt;     note = {R package version 0.3.1},</span></span>
+<span><span class="co">#&gt;     url = {https://github.com/HeleneGutte/ecorisk},</span></span>
+<span><span class="co">#&gt;   }</span></span></code></pre></div>
+<p>If you use the <em>ecorisk</em> framework or methodology, please also cite the accompanying software paper:</p>
+<blockquote>
+<p>Gutte, H.M., Möllmann, C. &amp; Otto, S.A. (2026). ecorisk: A modular R tool for ecological risk assessment analysis. <em>SoftwareX</em>, 34, 102612. <a href="https://doi.org/10.1016/j.softx.2026.102612" class="external-link uri">https://doi.org/10.1016/j.softx.2026.102612</a></p>
+</blockquote>
 </div>
 </div>
   </main><aside class="col-md-3"><div class="links">
@@ -113,7 +163,11 @@
 <div class="dev-status">
 <h2 data-toc-skip>Dev status</h2>
 <ul class="list-unstyled">
+<li><a href="https://cran.r-project.org/package=ecorisk" class="external-link"><img src="https://www.r-pkg.org/badges/version/ecorisk" alt="CRAN status"></a></li>
 <li><a href="https://github.com/HeleneGutte/ecorisk/actions/workflows/R-CMD-check.yaml" class="external-link"><img src="https://github.com/HeleneGutte/ecorisk/actions/workflows/R-CMD-check.yaml/badge.svg" alt="R-CMD-check"></a></li>
+<li><a href="https://cran.r-project.org/package=ecorisk" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/ecorisk" alt="CRAN downloads total"></a></li>
+<li><a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue" alt="License: MIT"></a></li>
+<li><a href="https://doi.org/10.1016/j.softx.2026.102612" class="external-link"><img src="https://img.shields.io/badge/DOI-10.1016%2Fj.softx.2026.102612-blue" alt="DOI"></a></li>
 </ul>
 </div>
 
